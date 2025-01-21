@@ -1,0 +1,55 @@
+# Node.js: Ignore node_modules and logs
+node/node_modules/
+node/npm-debug.log*
+node/yarn-debug.log*
+node/yarn-error.log*
+
+# macOS: Ignore system files
+.DS_Store
+._*
+
+# Windows: Ignore system files
+Thumbs.db
+Desktop.ini
+
+# Docker: Ignore temporary Docker files and volumes
+**/.env
+docker-compose.override.yml
+docker-compose*.yml~ # Temporary files created by editors
+mysql/volume/
+!mysql/volume/pre-initialized/
+
+# Logs
+*.log
+logs/
+
+# Compiled code and package manager artifacts
+*.out
+*.exe
+*.dll
+*.pyc
+*.pyo
+
+# IDE/editor settings and metadata
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Backups and temp files
+*.bak
+*.swp
+*.tmp
+*.temp
+*.old
+
+# General exclude for compressed files or archives
+*.tar
+*.gz
+*.zip
+*.7z
+*.rar
+*.bz2
+mysql/mysql.sock
