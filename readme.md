@@ -56,38 +56,10 @@ O projeto é composto por três serviços principais:
 - Armazena os registros na tabela "people"
 - Dados persistidos através de volumes Docker
 
-## 📁 Estrutura do Projeto
-
-```
-.
-├── docker-compose.yml
-├── Dockerfile
-├── index.js
-├── init.sql
-├── package.json
-├── nginx/
-│   ├── Dockerfile
-│   └── nginx.conf
-└── mysql/
-```
-
-## 🔧 Configurações
-
-### Volumes
-- `/usr/src/app` - Código da aplicação Node.js
-- `/var/lib/mysql` - Dados do MySQL
-
 ### Portas
 - Nginx: 8080:80
 - Node.js: 3000 (interno)
 - MySQL: 3306 (interno)
-
-### Redes
-- Rede bridge para comunicação entre os containers
-
-## 💻 Desenvolvimento
-
-Para desenvolvimento local, os volumes estão configurados para refletir alterações em tempo real no código da aplicação Node.js.
 
 ## 🐳 Docker Compose
 
@@ -97,11 +69,6 @@ O arquivo `docker-compose.yml` orquestra todos os serviços necessários:
 - Configuração de redes
 - Variáveis de ambiente
 - Dependências entre serviços
-
-## 📋 Requisitos
-
-- Docker
-- Docker Compose
 
 ## 🔍 Testando
 
