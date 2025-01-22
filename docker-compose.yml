@@ -6,25 +6,27 @@ services:
       context: ./nginx
     container_name: nginx
     restart: always
-    ports: 
+    ports:
       - '8080:80'
     depends_on:
       - node
     networks:
       - default-network
-  
+
   node:
     container_name: node
-    restart: always
     build:
       context: ./node
+    entrypoint: [ "dockerize", "-wait", "tcp://db:3306", "-timeout", "20s", "npm", "start" ]
+    volumes:
+      - ./node:/app
     depends_on:
       - db
     networks:
       - default-network
 
   db:
-    build: 
+    build:
       context: ./mysql
     container_name: db
     restart: always
