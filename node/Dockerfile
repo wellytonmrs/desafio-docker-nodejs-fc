@@ -2,9 +2,11 @@ FROM node:18
 
 WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 
-RUN npm i
+RUN npm install
+
+COPY . .
 
 ENV DOCKERIZE_VERSION v0.9.2
 
@@ -15,4 +17,4 @@ RUN apt-get update \
 
 EXPOSE 3000
 
-#CMD [ "npm", "start" ]
+CMD [ "npm", "start" ]
